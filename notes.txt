@@ -19,3 +19,39 @@
 > With Spring MVC we can use different view technologies to render web pages.
     For example Groovy Markup, Freemarker, and Thymeleaf.
 > Spring MVC also integrates with other web frameworks
+
+###############################################################################
+################################ JAR VS WAR ###################################
+###############################################################################
+
+Estos archivos son simplemente archivos comprimidos con la herramienta java jar.
+Estos archivos se crean para diferentes propósitos. Aquí está la descripción de estos archivos:
+
+> Archivos .jar: los archivos .jar contienen bibliotecas, recursos y archivos
+de accesorios como archivos de propiedades.
+> Archivos .war: el archivo war contiene la aplicación web que se puede implementar
+en cualquier contenedor de servlet / jsp. El archivo .war contiene jsp, html, javascript
+y otros archivos necesarios para el desarrollo de aplicaciones web.
+
+###############################################################################
+########################### EAR VS WAR VS JAR #################################
+###############################################################################
+
+La mayor diferencia entre los archivos JAR, WAR y EAR es el hecho de que están dirigidos a
+diferentes entornos.
+> Un archivo EAR requiere un servidor de aplicaciones totalmente compatible con la plataforma Java,
+Enterprise Edition (Java EE) o Jakarta Enterprise Edition (EE), como WebSphere o JBoss, para ejecutarse.
+> Un archivo WAR solo requiere un servidor de aplicaciones compatible con Java EE Web Profile para ejecutarse.
+> Un archivo JAR solo requiere una instalación Java
+
+También hay restricciones y requisitos internos que se aplican a los archivos EAR, WAR y JAR:
+> Los archivos EAR deben tener un archivo application.xml contenido dentro de una carpeta
+    llamada META-INF.
+> Un archivo WAR requiere un archivo web.xml contenido en una carpeta WEB-INF.
+> Los archivos JAR no tienen ninguno de estos requisitos.
+
+###############################################################################
+################################ MAVEN WAR ####################################
+###############################################################################
+
+WAR: Web Application Archive
