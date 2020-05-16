@@ -55,3 +55,32 @@ También hay restricciones y requisitos internos que se aplican a los archivos E
 ###############################################################################
 
 WAR: Web Application Archive
+
+###############################################################################
+############################## MAVEN CARGO ####################################
+###############################################################################
+
+> Es un plugin (como install, clean, war que aparece en la sección MAVEN)
+> Plugin que permite administrar e implementar aplicaciones en una variedad de servidores de aplicaciones.
+> Este complemento nos ayudará a desarrollar rápidamente una aplicación sin necesidad de
+    instalar un contenedor web standalone(independiente) de tomcat, lo cual es excelente ya que
+    implementar el tomcat independiente no siempre es un proceso fácil o trivial que puede ser
+    complicado para que funcione ahora.
+> Se especifica si se debe implementar incorporado local o Tomcat remoto, en nuestro caso estamos
+    usando Embedded porque es la configuración más simple para comenzar a trabajar y eso es
+    esencialmente lo que necesitamos hacer con esta pequeña configuración que podemos
+    implementar y comenzar Tomcat con un clic.
+
+    <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+        <version>1.7.12</version>
+        <configuration>
+            <container>
+                <containerId>tomcat9x</containerId>
+                <type>embedded</type>
+            </container>
+        </configuration>
+    </plugin>
+
+> mvn cargo:run : run webapp
