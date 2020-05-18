@@ -20,6 +20,21 @@
     For example Groovy Markup, Freemarker, and Thymeleaf.
 > Spring MVC also integrates with other web frameworks
 
+############################## SIMPLE CONTROLLER ##############################
+
+> Spring MVC is designed around the DispatcherServlet wich plays the role of Front Controller.
+> It receives all of the requests for your application
+
+> We can map requests to method in classes annotated with @Controller.
+    Those classes are known as annotated controllers or controller classes.
+
+> The @RequestMapping annotation is used to map requests to controller methods, variants:
+    @GetMapping
+    @PostMapping
+    @PutMapping
+    @DeleteMapping
+    @PatchMapping
+
 ###############################################################################
 ################################ JAR VS WAR ###################################
 ###############################################################################
