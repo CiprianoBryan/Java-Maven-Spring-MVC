@@ -35,6 +35,41 @@
     @DeleteMapping
     @PatchMapping
 
+####################### SPRING MVC REQUEST PROCESSING #########################
+
+       1 REQUEST                                                 10 RESPONSE
+            |                                                           ^
+            V                                                           |
+          +---------------------------------------------------------------+
+          |                DISPATCHER SERVLET                             |
+          +---------------------------------------------------------------+
+            | ^ 3              | ^ 5               | ^ 7              | ^ 9
+          2 V |              4 V |               6 V |              8 V |
+      +-----------+        +-----------+       +-----------+     +-----------+
+      |  HANDLER  |        |  HANDLER  |       |   VIEW    |     |   VIEW    |
+      |  MAPPING  |        | CONTROLLER|       |  RESOLVER |     |           |
+      +-----------+        +-----------+       +-----------+     +-----------+
+
+ 1: El navegador crea una solicitud a una URL específica
+ 2: El controlador del dispatcher (DISPATCHER CONTROLLER) recibe la solicitud del navegador
+    > El dispatcher servlet necesita identificar qué controlador manejará la solicitud
+      por lo que utiliza la asignación de Controladores (HANDLER MAPPING)
+      para encontrar el controlador correcto
+ 3: La asignación de controladores (HANDLER MAPPING) retorna el método
+    de controlador específico que maneja la solicitud
+ 4: El dispatcher servlet llama al método del controlador específico (SPECIFIC HANDLER METHOD)
+ 5: El método del controlador (HANDLER CONTROLLER) retorna el modelo y el nombre de la vista
+ 6: El dispatcher servlet ahora tiene el nombre de vista lógico pero aún necesita determinar
+    el archivo de vista (VIEW FILE) para usar (ejm: welcome.jsp), para hacerlo encuentra
+    el VIEW RESOLVER que configuramos y lo llama usando el nombre de la vista lógica
+    para ver que se pasa a la vista
+ 7: El VIEW RESOLVER necesita encontrar el VIEW FILE, una vez que la encuentra lo retorna al
+    DISPATCHER SERVLET
+ 8: El DISPATCHER SERVLET lo ejecuta, hace que el modelo esté disponible para la vista
+ 9: Se visualiza la vista (The VIEW is rendered) y se retorna el contenido al DISPATCHER SERVLET
+ 10: El DISPATCHER SERVLET envia el RESPONSE al BROWSER
+
+
 ###############################################################################
 ################################ JAR VS WAR ###################################
 ###############################################################################
