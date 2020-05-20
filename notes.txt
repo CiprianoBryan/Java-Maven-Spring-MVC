@@ -134,3 +134,10 @@ WAR: Web Application Archive
     </plugin>
 
 > mvn cargo:run : run webapp
+
+###############################################################################
+########################## LOMBOK ANNOTATIONS #################################
+###############################################################################
+
+@Data = @Getter + @Setter + @ToString + @EqualsAndHashCode // importante usarlo en modelos, items
+@EqualsAndHashCode(of = {"fieldName1", "fieldName2"}): Especificamos a que campos queremos que se aplique este annotation
