@@ -141,3 +141,4 @@ WAR: Web Application Archive
 
 @Data = @Getter + @Setter + @ToString + @EqualsAndHashCode // importante usarlo en modelos, items
 @EqualsAndHashCode(of = {"fieldName1", "fieldName2"}): Especificamos a que campos queremos que se aplique este annotation
+@NonNull: verifica que no sea null el campo
